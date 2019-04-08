@@ -1,10 +1,12 @@
 package org.sid.entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Niveau implements Serializable{
@@ -12,7 +14,10 @@ public class Niveau implements Serializable{
 	private Long id_niveau;
 	
 	@ManytoOne
-	private Client_pro client_pro
+	private Client_pro client_pro;
+	@OneToMany(mappedBy="niveau")
+	private Collection <Client> Clients;
+
 	
 	public Niveau() {
 		super();
