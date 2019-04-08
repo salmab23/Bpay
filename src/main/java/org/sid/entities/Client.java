@@ -12,6 +12,7 @@ public class Client implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 	@Id
+	//test
 protected String Numero; 
 	protected String RS;
 	protected String Rc;
@@ -27,7 +28,7 @@ protected String Numero;
 		Numero = numero;
 	}
 	protected Collection <Facture> Factures_recus;
-	protected Collection <Trasfert> transferts;
+	protected Collection <Transfert> transferts;
 	protected String getNumero() {
 	return Numero;
 }
