@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Transfert implements Serializable {
@@ -14,13 +16,15 @@ public class Transfert implements Serializable {
 	private int num_temetteur ;
 	private int num_trecepteur ;
 	private Date datet ;
+	@ManyToOne
+	@JoinColumn(name="Numero")
+	private Client client;;
 	public Transfert() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	@ManytoOne
-	private Client client;
+	
 	
 	public Transfert(int num_temetteur, int num_trecepteur, Date datet) {
 		super();

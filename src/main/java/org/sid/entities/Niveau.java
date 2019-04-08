@@ -15,6 +15,7 @@ public class Niveau implements Serializable{
 	
 	@ManytoOne
 	private Client_pro client_pro;
+	
 	@OneToMany(mappedBy="niveau")
 	private Collection <Client> Clients;
 

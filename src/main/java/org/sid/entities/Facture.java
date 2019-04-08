@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Facture implements Serializable {
@@ -16,13 +18,16 @@ public class Facture implements Serializable {
 	private int montantf ;
 	private String num_femetteur ;
 	private String num_frecepteur ;
+	@ManyToOne
+	@JoinColumn(name="Numero")
+	private Client client;
 	public Facture() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	@ManytoOne
-	private Client client ; 
+	@OneToMany(mappedBy="Factures_emis")
+	private Client client; 
 	
 	public Facture(String decr, Date datef, int montantf, String num_femetteur, String num_frecepteur) {
 		super();

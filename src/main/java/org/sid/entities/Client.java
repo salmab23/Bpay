@@ -6,6 +6,10 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 @Entity
 public class Client implements Serializable {
 	public Client() {
@@ -22,24 +26,28 @@ protected String Numero;
 	protected String Mom;
 	protected String Prenom;
 	protected boolean Etat;
+	
+	
+	// NIVEAU AND CLIENT ANNOTATIONS ARE DONE  
+	@ManyToOne
+	@JoinColumn(name="id_niveau")
 	protected Niveau niveau;
+	
+	// NOT DONE YET 
+	@OneToMany(mappedBy="client")
 	protected Collection <Facture> Factures_emis;
+	protected Collection <Facture> Factures_Recus;
+
 	
-	@OnetoMany
-	@JoinColumn(name="id_facture")
-	private List<Facture> factures = new ArrayList<>();
+	// TRANSFERT AND CLIENT ANNOTATIONS ARE DONE
+	@OneToMany(mappedBy="client")
+	protected Collection <Transfert> transferts;
 	
-	@OnetoMany
-	@JoinColumn(name="id_transfert")
-	private List<Transfert> transferts = new ArrayList<>();
-	
-	
+
 	public Client(String numero) {
 		super();
 		Numero = numero;
 	}
-	protected Collection <Facture> Factures_recus;
-	protected Collection <Transfert> transferts;
 	protected String getNumero() {
 	return Numero;
 }
