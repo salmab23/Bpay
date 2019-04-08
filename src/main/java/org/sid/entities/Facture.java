@@ -20,6 +20,10 @@ public class Facture implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	@ManytoOne
+	private Client client ; 
+	
 	public Facture(String decr, Date datef, int montantf, String num_femetteur, String num_frecepteur) {
 		super();
 		this.descr = decr;

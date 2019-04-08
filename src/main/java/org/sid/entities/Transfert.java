@@ -18,6 +18,10 @@ public class Transfert implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	@ManytoOne
+	private Client client;
+	
 	public Transfert(int num_temetteur, int num_trecepteur, Date datet) {
 		super();
 		this.num_temetteur = num_temetteur;

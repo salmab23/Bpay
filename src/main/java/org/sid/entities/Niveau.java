@@ -10,7 +10,10 @@ import javax.persistence.Id;
 public class Niveau implements Serializable{
 	@Id  @GeneratedValue
 	private Long id_niveau;
-
+	
+	@ManytoOne
+	private Client_pro client_pro
+	
 	public Niveau() {
 		super();
 		// TODO Auto-generated constructor stub

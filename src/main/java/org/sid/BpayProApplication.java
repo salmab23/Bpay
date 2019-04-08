@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class BpayProApplication {
 
-	//test push git
 	
 	public static void main(String[] args) {
 		SpringApplication.run(BpayProApplication.class, args);

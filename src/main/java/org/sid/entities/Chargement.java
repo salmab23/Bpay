@@ -18,6 +18,8 @@ public class Chargement implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	@ManytoOne
+	private Client_pro client_pro
 	public Chargement(Date datec, int montantc, String num_compte) {
 		super();
 		this.datec = datec;

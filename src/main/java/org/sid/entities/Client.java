@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 @Entity
 public class Client implements Serializable {
@@ -11,7 +12,7 @@ public class Client implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	@Id
+	@Id @GeneratedValue
 	//test
 protected String Numero; 
 	protected String RS;
@@ -23,6 +24,16 @@ protected String Numero;
 	protected boolean Etat;
 	protected Niveau niveau;
 	protected Collection <Facture> Factures_emis;
+	
+	@OnetoMany
+	@JoinColumn(name="id_facture")
+	private List<Facture> factures = new ArrayList<>();
+	
+	@OnetoMany
+	@JoinColumn(name="id_transfert")
+	private List<Transfert> transferts = new ArrayList<>();
+	
+	
 	public Client(String numero) {
 		super();
 		Numero = numero;
