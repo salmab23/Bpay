@@ -33,10 +33,10 @@ protected String Numero;
 	@JoinColumn(name="id_niveau")
 	protected Niveau niveau;
 	
-	// NOT DONE YET 
+	
 	@OneToMany(mappedBy="client")
 	protected Collection <Facture> Factures_emis;
-	protected Collection <Facture> Factures_Recus;
+	
 
 	
 	// TRANSFERT AND CLIENT ANNOTATIONS ARE DONE

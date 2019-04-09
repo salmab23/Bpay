@@ -16,6 +16,33 @@ public class Facture implements Serializable {
 	private String descr ;
 	private Date datef ;
 	private int montantf ;
+	public String getDescr() {
+		return descr;
+	}
+
+	public void setDescr(String descr) {
+		this.descr = descr;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public Facture(Long id_facture, String descr, Date datef, int montantf, String num_femetteur, String num_frecepteur,
+			Client client) {
+		super();
+		this.id_facture = id_facture;
+		this.descr = descr;
+		this.datef = datef;
+		this.montantf = montantf;
+		this.num_femetteur = num_femetteur;
+		this.num_frecepteur = num_frecepteur;
+		this.client = client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
 	private String num_femetteur ;
 	private String num_frecepteur ;
 	
@@ -28,14 +55,6 @@ public class Facture implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Facture(String decr, Date datef, int montantf, String num_femetteur, String num_frecepteur) {
-		super();
-		this.descr = decr;
-		this.datef = datef;
-		this.montantf = montantf;
-		this.num_femetteur = num_femetteur;
-		this.num_frecepteur = num_frecepteur;
-	}
 	public Long getId_facture() {
 		return id_facture;
 	}
