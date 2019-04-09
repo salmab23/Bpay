@@ -13,7 +13,6 @@ public class Niveau implements Serializable{
 	@Id  @GeneratedValue
 	private Long id_niveau;
 	
-	
 	@OneToMany(mappedBy="niveau")
 	private Collection <Client> Clients;
 	@OneToMany(mappedBy="N") 

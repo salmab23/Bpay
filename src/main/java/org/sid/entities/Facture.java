@@ -18,16 +18,15 @@ public class Facture implements Serializable {
 	private int montantf ;
 	private String num_femetteur ;
 	private String num_frecepteur ;
+	
 	@ManyToOne
 	@JoinColumn(name="Numero")
 	private Client client;
+	
 	public Facture() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	@OneToMany(mappedBy="Factures_emis")
-	private Client client; 
 	
 	public Facture(String decr, Date datef, int montantf, String num_femetteur, String num_frecepteur) {
 		super();
