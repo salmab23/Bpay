@@ -1,11 +1,18 @@
 package org.sid.entities;
 
+import java.util.Collection;
+
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 public class Client_pro extends Client{
 protected String Radical;
 
+@OneToMany
+@JoinColumn(name="Client_pro")
+private Collection<Chargement> chargements;
+
+//Test push
 public String getRadical() {
 	return Radical;
 }
@@ -14,13 +21,7 @@ public void setRadical(String radical) {
 	Radical = radical;
 }
 
-@OneToMany
-@JoinColumn(name="id_chargement")
-private List<Chargement> chargements = new ArrayList<>();
 
-@OneToMany
-@JoinColumn(name="id_niveau")
-private List<Niveau> niveau = new ArrayList<>();
 
 
 public Client_pro() {

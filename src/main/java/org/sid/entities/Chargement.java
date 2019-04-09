@@ -1,11 +1,14 @@
 package org.sid.entities;
 
 import java.io.Serializable;
+
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Chargement implements Serializable{
@@ -14,6 +17,12 @@ public class Chargement implements Serializable{
 	private Date datec ;
 	private int montantc ;
 	private String num_compte ;
+
+@ManyToOne
+@JoinColumn(name="Numero")
+private Client_pro client_pro;
+
+	
 	public Chargement() {
 		super();
 		// TODO Auto-generated constructor stub
