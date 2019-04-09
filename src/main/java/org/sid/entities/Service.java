@@ -3,12 +3,17 @@ package org.sid.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Service {
 	@Id  @GeneratedValue
 	private long id_service;
 	private String titre;
+	@ManyToOne
+	@JoinColumn(name="id_niveau")
+	private Niveau N;
 	public Service() {
 		super();
 		// TODO Auto-generated constructor stub

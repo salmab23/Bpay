@@ -13,12 +13,11 @@ public class Niveau implements Serializable{
 	@Id  @GeneratedValue
 	private Long id_niveau;
 	
-	@ManytoOne
-	private Client_pro client_pro;
 	
 	@OneToMany(mappedBy="niveau")
 	private Collection <Client> Clients;
-
+	@OneToMany(mappedBy="N") 
+	private Collection <Service> service;
 	
 	public Niveau() {
 		super();
